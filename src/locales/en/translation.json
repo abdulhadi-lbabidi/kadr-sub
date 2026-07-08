@@ -68,7 +68,7 @@
   "subscription": {
     "title": "Request New Subscription Booking",
     "subtitle": "Enter your registered phone number and select the preferred slot to complete your booking automatically.",
-    "success": "The appointment and subscription have been booked successfully!",
+    "success": "The appointment have been booked successfully!",
     "phone_label": "Registered Phone Number",
     "phone_placeholder": "Enter the phone number",
     "phone_required": "Please enter your registered phone number",
