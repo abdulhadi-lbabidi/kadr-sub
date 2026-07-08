@@ -50,6 +50,9 @@ export default function Navbar() {
             onClick={toggleLanguage}
             className="flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground transition hover:border-foreground hover:text-foreground"
             aria-label="Switch language"
+            style={{
+              fontFamily: 'cairo',
+            }}
           >
             <Globe size={13} />
             {i18n.language === 'en' ? 'عربي' : 'English'}
