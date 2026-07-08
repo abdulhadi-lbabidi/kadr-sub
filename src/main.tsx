@@ -5,7 +5,7 @@ import { RouterProvider } from 'react-router';
 import { router } from './utils/router.tsx';
 import axios from 'axios';
 import './styles/index.css';
-
+import './i18n/index.ts';
 axios.defaults.baseURL =
   import.meta.env.VITE_API || 'https://admin.nouh-agency.com/api/';
 

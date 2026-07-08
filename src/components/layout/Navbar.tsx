@@ -10,11 +10,11 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navLinks = [
-    { key: 'home', to: '/' },
-    { key: 'about', to: '/about' },
-    { key: 'services', to: '/services' },
-    { key: 'work', to: '/work' },
-    { key: 'contact', to: '/contact' },
+    // { key: 'home', to: '/' },
+    // { key: 'about', to: '/about' },
+    // { key: 'services', to: '/services' },
+    // { key: 'work', to: '/work' },
+    // { key: 'contact', to: '/contact' },
   ];
 
   const toggleLanguage = () => {
