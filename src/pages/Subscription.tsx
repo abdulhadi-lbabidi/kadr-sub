@@ -12,9 +12,7 @@ export default function Subscription() {
 
   const isRtl = i18n.language === 'ar';
   const currentDir = isRtl ? 'rtl' : 'ltr';
-
   const { data: times, isLoading: isLoadingTimes } = useGetTimes();
-
   const { mutate, isPending } = useCreateSubscription();
 
   const {
@@ -158,11 +156,18 @@ export default function Subscription() {
                     ? t('subscription.time_loading')
                     : t('subscription.time_select')}
                 </option>
-                {times?.map((time) => (
-                  <option key={time.id} value={time.id}>
-                    {time.work_time}
-                  </option>
-                ))}
+                {(Array.isArray(times) ? times : (times as any)?.data)?.map(
+                  (time: any) => (
+                    <option
+                      key={time.id}
+                      value={time.id}
+                      dir="ltr"
+                      className="text-left"
+                    >
+                      {time.work_time}
+                    </option>
+                  )
+                )}
               </select>
               {errors.time_id && (
                 <p className="text-red-500 text-xs mt-1 font-medium">
