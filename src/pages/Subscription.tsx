@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
-import { useTranslation } from 'react-i18next'; // استدعاء الترجمة
+import { useTranslation } from 'react-i18next';
 import { useGetTimes } from '../api/time';
 import { useCreateSubscription } from '../api/subscription';
 import { CreateSubscriptionInput } from '../types/types';
@@ -94,6 +94,7 @@ export default function Subscription() {
         )}
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+          {/* phone_number */}
           <div>
             <label className="block text-sm font-semibold text-gray-700 mb-2">
               {t('subscription.phone_label')}
@@ -115,6 +116,7 @@ export default function Subscription() {
             )}
           </div>
 
+          {/* date */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-2">
@@ -169,6 +171,7 @@ export default function Subscription() {
             </div>
           </div>
 
+          {/* notes */}
           <div>
             <label className="block text-sm font-semibold text-gray-700 mb-2">
               {t('subscription.note_label')}
@@ -186,6 +189,7 @@ export default function Subscription() {
             )}
           </div>
 
+          {/* submit */}
           <div className="pt-2">
             <button
               type="submit"
