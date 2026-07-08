@@ -64,5 +64,24 @@
       "terms": "Terms",
       "sitemap": "Sitemap"
     }
+  },
+  "subscription": {
+    "title": "Request New Subscription Booking",
+    "subtitle": "Enter your registered phone number and select the preferred slot to complete your booking automatically.",
+    "success": "The appointment and subscription have been booked successfully!",
+    "phone_label": "Registered Phone Number",
+    "phone_placeholder": "Enter the phone number associated with your account (Worker or Company)",
+    "phone_required": "Please enter your registered phone number to verify your identity",
+    "date_label": "Date",
+    "date_required": "Please select a date",
+    "time_label": "Time Slot",
+    "time_required": "Please choose the required time slot",
+    "time_loading": "Loading time slots...",
+    "time_select": "Select a time slot",
+    "note_label": "Additional Notes",
+    "note_placeholder": "Write any details or notes you would like to attach to your booking...",
+    "submit_btn": "Confirm & Book Subscription",
+    "loading_btn": "Confirming booking and verifying...",
+    "fallback_error": "An unexpected error occurred, please try again."
   }
 }

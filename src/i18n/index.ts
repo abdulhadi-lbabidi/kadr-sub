@@ -15,12 +15,15 @@ i18n
     },
     fallbackLng: "en",
     supportedLngs: ["en", "ar"],
+    load: "languageOnly",
+    returnObjects: true,
     interpolation: {
       escapeValue: false,
     },
     detection: {
       order: ["localStorage", "navigator"],
       caches: ["localStorage"],
+      lookupLocalStorage: "i18nextLng",
     },
   });
 
