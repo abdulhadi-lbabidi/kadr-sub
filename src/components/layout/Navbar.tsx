@@ -70,11 +70,11 @@ export default function Navbar() {
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
-            {menuOpen ? <X size={20} /> : <Menu size={20} />}
+            {/* {menuOpen ? <X size={20} /> : <Menu size={20} />} */}
           </button>
         </div>
       </nav>
-
+      {/* 
       {menuOpen && (
         <div className="border-t border-border bg-background px-6 py-4 lg:hidden">
           <ul className="flex flex-col gap-4">
@@ -100,7 +100,7 @@ export default function Navbar() {
             </li>
           </ul>
         </div>
-      )}
+      )} */}
     </header>
   );
 }

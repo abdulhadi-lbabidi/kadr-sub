@@ -1,14 +1,21 @@
 import React, { useState } from 'react';
-import { useForm, SubmitHandler } from 'react-hook-form';
+import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { useGetTimes } from '../api/time';
 import { useCreateSubscription } from '../api/subscription';
 import { CreateSubscriptionInput } from '../types/types';
 import LoadingIcon from '../assets/icons/LoadingIcon';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 export default function Subscription() {
   const { t, i18n } = useTranslation();
   const [successMessage, setSuccessMessage] = useState<string>('');
+
+  const today = new Date();
+
+  const startOfMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+  const endOfMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0);
 
   const isRtl = i18n.language === 'ar';
   const currentDir = isRtl ? 'rtl' : 'ltr';
@@ -20,6 +27,7 @@ export default function Subscription() {
     handleSubmit,
     reset,
     setError,
+    control,
     formState: { errors },
   } = useForm<CreateSubscriptionInput>({
     defaultValues: {
@@ -115,24 +123,42 @@ export default function Subscription() {
             )}
           </div>
 
-          {/* date */}
+          {/* date & time */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-2">
                 {t('subscription.date_label')}
               </label>
-              <input
-                type="date"
-                min={new Date().toISOString().split('T')[0]}
-                {...register('date', {
+              <Controller
+                name="date"
+                control={control}
+                rules={{
                   required: t('subscription.date_required'),
-                })}
-                className={`w-full px-4 py-2.5 bg-gray-50 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors ${
-                  errors.date ? 'border-red-500' : 'border-gray-300'
-                }`}
+                }}
+                render={({ field }) => (
+                  <DatePicker
+                    selected={field.value ? new Date(field.value) : null}
+                    onChange={(date: Date | null) => {
+                      field.onChange(
+                        date ? date.toISOString().split('T')[0] : ''
+                      );
+                    }}
+                    minDate={startOfMonth}
+                    maxDate={endOfMonth}
+                    filterDate={(date) => {
+                      const day = date.getDay();
+                      return day !== 4 && day !== 5;
+                    }}
+                    dateFormat="yyyy-MM-dd"
+                    placeholderText={t('subscription.date_label')}
+                    className={`w-full px-4 py-2.5 bg-gray-50 border rounded-lg focus:ring-2 focus:ring-blue-500 ${
+                      errors.date ? 'border-red-500' : 'border-gray-300'
+                    }`}
+                  />
+                )}
               />
               {errors.date && (
-                <p className="text-red-500 text-xs mt-1 font-medium">
+                <p className="text-red-500 text-xs mt-1">
                   {errors.date.message}
                 </p>
               )}

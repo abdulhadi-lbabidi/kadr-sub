@@ -82,7 +82,8 @@
     "note_placeholder": "Write any details or notes you would like to attach to your booking...",
     "submit_btn": "Confirm & Book ",
     "loading_btn": "Confirming booking and verifying...",
-    "fallback_error": "An unexpected error occurred, please try again."
+    "fallback_error": "An unexpected error occurred, please try again.",
+    "invalid_day": "Booking is not available on Thursdays and Fridays."
   },
   "errors": {
     "not_found": {
