@@ -69,7 +69,7 @@
     "title": "Request New  Booking",
     "subtitle": "Enter your registered phone number and select the preferred slot to complete your booking automatically.",
     "success": "The appointment have been booked successfully!",
-    "phone_label": " Phone Number",
+    "phone_label": "Phone Number (WhatsApp Number)",
     "phone_placeholder": "Enter the phone number",
     "phone_required": "Please enter your registered phone number",
     "date_label": "Date",
