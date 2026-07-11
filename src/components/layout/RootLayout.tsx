@@ -11,7 +11,6 @@ export default function RootLayout() {
         <main>
           <Outlet />
         </main>
-        <Footer />
       </div>
     </I18nProvider>
   );
