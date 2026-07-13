@@ -132,7 +132,7 @@ export default function Subscription() {
 
                   const countries = [
                     {
-                      code: '+963',
+                      code: '00963',
                       flag: 'https://flagcdn.com/w20/sy.png',
                       name: 'SY',
                     },
@@ -237,7 +237,7 @@ export default function Subscription() {
                         value={currentNumber}
                         onChange={handleNumberChange}
                         placeholder={
-                          selectedCountry.code === '+963'
+                          selectedCountry.code === '00963'
                             ? '9xxx xxx xx'
                             : t('subscription.phone_placeholder')
                         }
